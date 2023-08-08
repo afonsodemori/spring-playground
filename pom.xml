@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dev.afonso</groupId>
 	<artifactId>spring-playground</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<name>spring-playground</name>
 	<description>Spring Boot project for studying and testing purposes</description>
 	<properties>
