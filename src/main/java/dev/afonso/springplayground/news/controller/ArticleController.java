@@ -63,7 +63,6 @@ public class ArticleController {
         return ResponseEntity.ok(repository.save(article));
     }
 
-
     @DeleteMapping("/{uuid}")
     public ResponseEntity<Article> delete(@PathVariable String uuid) {
         Optional<Article> optional = repository.findById(UUID.fromString(uuid));

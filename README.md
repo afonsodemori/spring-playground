@@ -8,7 +8,8 @@ https://spring-playground.afonso.dev/swagger-ui
 
 - [x] Endpoints to create/edit/delete Articles
 - [ ] CRUD for Authors and relate them to Articles
-- [ ] News categorization (CRUD for Section, Tags, etc.)
+- [x] News categorization (CRUD for Section)
+- [ ] News categorization (CRUD for Tags)
 - [ ] Authentication
 - [ ] Allow user registration
 - [ ] Social login

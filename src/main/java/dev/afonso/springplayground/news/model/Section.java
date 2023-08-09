@@ -2,50 +2,40 @@ package dev.afonso.springplayground.news.model;
 
 import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.PreUpdate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-public class Article {
+public class Section {
     @Id
     @Type(type="org.hibernate.type.UUIDCharType")
     private UUID uuid = UUID.randomUUID();
     @Column(nullable = false)
-    private String title;
-    @ManyToOne
-    private Section section;
-    @Column(columnDefinition = "text")
-    private String body;
+    private String name;
     private final LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt = LocalDateTime.now();
+
+    public Section() {
+    }
+
+    public Section(String uuid) {
+        this.uuid = UUID.fromString(uuid);
+    }
 
     public UUID getUuid() {
         return uuid;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Section getSection() {
-        return section;
-    }
-
-    public void setSection(Section section) {
-        this.section = section;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LocalDateTime getCreatedAt() {
