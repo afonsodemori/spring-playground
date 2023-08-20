@@ -7,5 +7,12 @@
 			"installMaven": "true",
 			"installGradle": "false"
 		}
+	},
+	"postCreateCommand": {
+		"git-completion-download": "curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /home/vscode/.git-completion.bash",
+		"git-completion-enable": "echo 'source /home/vscode/.git-completion.bash' >> /home/vscode/.bashrc"
+	},
+	"postStartCommand": {
+		"git-config-safe-directory": "git config --global --add safe.directory ${containerWorkspaceFolder}"
 	}
 }
