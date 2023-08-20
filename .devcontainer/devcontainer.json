@@ -1,5 +1,5 @@
 {
-	"name": "Java",
+	"name": "Java17",
 	"image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
@@ -10,9 +10,17 @@
 	},
 	"postCreateCommand": {
 		"git-completion-download": "curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /home/vscode/.git-completion.bash",
-		"git-completion-enable": "echo 'source /home/vscode/.git-completion.bash' >> /home/vscode/.bashrc"
+		"git-completion-enable": "echo 'source /home/vscode/.git-completion.bash' >> /home/vscode/.bashrc",
+		"alias-ll": "echo \"alias ll='ls -alFh'\" >> /home/vscode/.bashrc"
 	},
 	"postStartCommand": {
 		"git-config-safe-directory": "git config --global --add safe.directory ${containerWorkspaceFolder}"
-	}
+	},
+	"containerEnv": {
+		"PROMPT_COMMAND": "history -a",
+		"HISTFILE": "/bash_history/.bash_history"
+	},
+	"mounts": [
+		"source=bash_history,target=/bash_history,type=volume"
+	]
 }
